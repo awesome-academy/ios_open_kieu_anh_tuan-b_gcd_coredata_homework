@@ -80,7 +80,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iWN-Sg-atj">
-                                                    <rect key="frame" x="336.5" y="51.5" width="17.5" height="25"/>
+                                                    <rect key="frame" x="198.5" y="51.5" width="155.5" height="25"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="chevron.right" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
@@ -89,6 +89,7 @@
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="ZE0-PV-Azt" firstAttribute="leading" secondItem="te1-PQ-Ie1" secondAttribute="leading" constant="40" id="5WJ-oJ-hPv"/>
+                                                <constraint firstItem="iWN-Sg-atj" firstAttribute="leading" secondItem="1lI-V5-j4A" secondAttribute="trailing" constant="20" id="7xJ-0N-2y0"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="iWN-Sg-atj" secondAttribute="trailing" constant="40" id="Br4-ez-qGM"/>
                                                 <constraint firstAttribute="bottom" secondItem="ZE0-PV-Azt" secondAttribute="bottom" constant="28" id="FOc-fA-o7g"/>
                                                 <constraint firstItem="ZE0-PV-Azt" firstAttribute="top" secondItem="te1-PQ-Ie1" secondAttribute="top" constant="28" id="Grd-Jt-HvI"/>
@@ -174,8 +175,8 @@
                                     </label>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="currentJob" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LD-p9-Jfw">
-                                <rect key="frame" x="159" y="298" width="96" height="24"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="currentJob" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5LD-p9-Jfw">
+                                <rect key="frame" x="16" y="298" width="382" height="24"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -257,6 +258,9 @@
                                 </segments>
                                 <color key="tintColor" red="0.28273275489999999" green="0.34546494480000001" blue="0.32548898459999998" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <color key="selectedSegmentTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <connections>
+                                    <action selector="didChangeSegment:" destination="i1l-zd-Kyk" eventType="valueChanged" id="HlT-rD-PWx"/>
+                                </connections>
                             </segmentedControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="atE-jP-zbV">
                                 <rect key="frame" x="16" y="54" width="28" height="24"/>
@@ -288,6 +292,9 @@
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="100" id="nqc-dL-hHv"/>
                                                             </constraints>
+                                                            <connections>
+                                                                <action selector="contentViewTapped:" destination="DYp-wN-FMx" eventType="touchUpInside" id="5Ps-fC-dQx"/>
+                                                            </connections>
                                                         </button>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="0mA-qq-nxe">
                                                             <rect key="frame" x="40" y="28" width="72" height="72"/>
@@ -313,7 +320,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zim-ts-R5E">
-                                                            <rect key="frame" x="336.5" y="51.5" width="17.5" height="25"/>
+                                                            <rect key="frame" x="198.5" y="51.5" width="155.5" height="25"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <state key="normal" image="chevron.right" catalog="system">
                                                                 <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
@@ -322,6 +329,7 @@
                                                     </subviews>
                                                     <constraints>
                                                         <constraint firstItem="pYj-i3-moI" firstAttribute="leading" secondItem="Pkx-8V-Fe6" secondAttribute="leadingMargin" constant="16" id="8T1-5u-x07"/>
+                                                        <constraint firstItem="zim-ts-R5E" firstAttribute="leading" secondItem="8iz-nA-46Q" secondAttribute="trailing" constant="20" id="DoK-ML-qSN"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="pYj-i3-moI" secondAttribute="bottom" id="SSl-ih-tJr"/>
                                                         <constraint firstItem="0mA-qq-nxe" firstAttribute="leading" secondItem="Pkx-8V-Fe6" secondAttribute="leading" constant="40" id="Vu0-B5-nao"/>
                                                         <constraint firstAttribute="trailingMargin" secondItem="zim-ts-R5E" secondAttribute="trailing" constant="40" id="avw-by-QTq"/>
@@ -371,10 +379,12 @@
                             <constraint firstItem="T18-EW-u3Q" firstAttribute="top" secondItem="5LD-p9-Jfw" secondAttribute="bottom" constant="8" id="6wr-VL-o6l"/>
                             <constraint firstItem="R66-PN-4yq" firstAttribute="trailing" secondItem="TDt-e3-hyt" secondAttribute="trailing" id="EZy-8b-Ize"/>
                             <constraint firstItem="R66-PN-4yq" firstAttribute="trailing" secondItem="T18-EW-u3Q" secondAttribute="trailing" constant="16" id="FYv-5a-t8k"/>
+                            <constraint firstItem="5LD-p9-Jfw" firstAttribute="leading" secondItem="R66-PN-4yq" secondAttribute="leading" constant="16" id="NQj-bw-udK"/>
                             <constraint firstItem="5LD-p9-Jfw" firstAttribute="centerX" secondItem="JaU-we-q6X" secondAttribute="centerX" id="QLu-Fz-7qJ"/>
                             <constraint firstItem="atE-jP-zbV" firstAttribute="leading" secondItem="R66-PN-4yq" secondAttribute="leading" constant="16" id="ST8-Ex-mdX"/>
                             <constraint firstItem="pMj-06-CUI" firstAttribute="leading" secondItem="R66-PN-4yq" secondAttribute="leading" id="Syb-jP-StH"/>
                             <constraint firstItem="R66-PN-4yq" firstAttribute="trailing" secondItem="pMj-06-CUI" secondAttribute="trailing" id="Xq7-ue-DFa"/>
+                            <constraint firstItem="R66-PN-4yq" firstAttribute="trailing" secondItem="5LD-p9-Jfw" secondAttribute="trailing" constant="16" id="YxI-eI-Soa"/>
                             <constraint firstItem="T18-EW-u3Q" firstAttribute="leading" secondItem="R66-PN-4yq" secondAttribute="leading" constant="16" id="Z4R-hD-FLJ"/>
                             <constraint firstAttribute="bottom" secondItem="pMj-06-CUI" secondAttribute="bottom" id="b7Y-Nc-MDy"/>
                             <constraint firstItem="TDt-e3-hyt" firstAttribute="top" secondItem="T18-EW-u3Q" secondAttribute="bottom" constant="20" id="bkV-At-tOq"/>
@@ -387,6 +397,9 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="followersLabel" destination="dhu-bs-ITJ" id="Mc9-xg-GBk"/>
+                        <outlet property="followingLabel" destination="wSL-RL-2P2" id="9W0-qZ-iYk"/>
+                        <outlet property="repositoryLabel" destination="ekW-42-cpq" id="RYJ-ro-YfG"/>
                         <outlet property="segmentedControl" destination="TDt-e3-hyt" id="dJ9-UB-0sP"/>
                         <outlet property="userAddressLabel" destination="vp4-3f-7Ge" id="jAq-hR-Qew"/>
                         <outlet property="userAvatarImageView" destination="t4K-ab-toy" id="XV8-hN-w9e"/>
@@ -441,6 +454,9 @@
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="100" id="qgM-As-6p1"/>
                                                     </constraints>
+                                                    <connections>
+                                                        <action selector="contentViewTapped:" destination="qib-PN-2wt" eventType="touchUpInside" id="dds-1w-caT"/>
+                                                    </connections>
                                                 </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultAvatar" translatesAutoresizingMaskIntoConstraints="NO" id="Ued-Ga-6ni">
                                                     <rect key="frame" x="40" y="28" width="72" height="72"/>
@@ -466,7 +482,7 @@
                                                     </subviews>
                                                 </stackView>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WS7-Et-q5T">
-                                                    <rect key="frame" x="336.5" y="51.5" width="17.5" height="25"/>
+                                                    <rect key="frame" x="198.5" y="51.5" width="155.5" height="25"/>
                                                     <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <state key="normal" image="chevron.right" catalog="system">
                                                         <preferredSymbolConfiguration key="preferredSymbolConfiguration" configurationType="pointSize" pointSize="24"/>
@@ -483,6 +499,7 @@
                                                 <constraint firstItem="Ued-Ga-6ni" firstAttribute="top" secondItem="gOZ-W9-dHh" secondAttribute="top" constant="28" id="iqz-Tn-Dc1"/>
                                                 <constraint firstItem="WS7-Et-q5T" firstAttribute="centerY" secondItem="gOZ-W9-dHh" secondAttribute="centerY" id="jP9-k2-YLU"/>
                                                 <constraint firstItem="cFF-C3-HVJ" firstAttribute="centerY" secondItem="gOZ-W9-dHh" secondAttribute="centerY" id="pzI-6z-Fpb"/>
+                                                <constraint firstItem="WS7-Et-q5T" firstAttribute="leading" secondItem="cFF-C3-HVJ" secondAttribute="trailing" constant="20" id="sXP-zQ-WQf"/>
                                                 <constraint firstAttribute="trailingMargin" secondItem="nyQ-66-W4V" secondAttribute="trailing" constant="16" id="snR-lz-bxi"/>
                                                 <constraint firstItem="nyQ-66-W4V" firstAttribute="top" secondItem="gOZ-W9-dHh" secondAttribute="topMargin" id="zvz-MQ-FvK"/>
                                             </constraints>

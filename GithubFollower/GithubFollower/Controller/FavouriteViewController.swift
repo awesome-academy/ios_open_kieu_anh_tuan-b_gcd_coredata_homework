@@ -11,8 +11,8 @@ final class FavouriteViewController: UIViewController {
     
     @IBOutlet private weak var userTableView: UITableView!
     
-    private let users = DatabaseGetter().getUsers()
-    
+    private var users = [User]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -25,11 +25,13 @@ final class FavouriteViewController: UIViewController {
     }
 }
 
-extension FavouriteViewController: UITableViewDelegate, UITableViewDataSource {
+extension FavouriteViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         users.count
     }
-    
+}
+
+extension FavouriteViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = userTableView.dequeueReusableCell(UserTableViewCell.self)
         cell.config(users[indexPath.row])

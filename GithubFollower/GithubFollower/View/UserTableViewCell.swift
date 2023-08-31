@@ -24,14 +24,38 @@ final class UserTableViewCell: UITableViewCell, ReusableTableView {
         userButton.addShadow()
         userButton.layer.cornerRadius = 20
         userAvatarImageView.applyCircleImage()
-        userLinkLabel.underline()
-        userLinkLabel.textColor = .systemYellow
     }
     
     func config(_ user: User) {
-        userAvatarImageView.image = UIImage(named: user.avatar)
-        userNameLabel.text = user.name
-        userLinkLabel.text = user.url
+        userNameLabel.text = user.login
+        userLinkLabel.text = user.htmlUrl
+        
+        guard let url = URL(string: user.avatarUrl) else { return }
+        let dataTask = URLSession.shared.dataTask(with: url) { [weak self] (data, _, _) in
+            if let data = data {
+                DispatchQueue.main.async { [weak self] in
+                    self?.userAvatarImageView.image = UIImage(data: data)
+                }
+            }
+        }
+        dataTask.resume()
+        setClickableLink()
+    }
+    
+    private func setClickableLink() {
+        userLinkLabel.isUserInteractionEnabled = true
+        let tap = UITapGestureRecognizer(target: self, action: #selector(openLink))
+        userLinkLabel.addGestureRecognizer(tap)
+        userLinkLabel.underline()
+        userLinkLabel.textColor = .systemOrange
+    }
+    
+    @objc private func openLink() {
+        if let openLink = URL(string: userLinkLabel.text ?? "https://github.com/") {
+            if UIApplication.shared.canOpenURL(openLink) {
+                UIApplication.shared.open(openLink, options: [:])
+            }
+        }
     }
     
     @IBAction private func contentViewTapped(_ sender: Any) {

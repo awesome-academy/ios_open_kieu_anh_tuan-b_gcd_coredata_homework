@@ -7,39 +7,81 @@
 
 import Foundation
 
-class DatabaseGetter {
-    func getUsers() -> [User] {
-        return [
-            User(
-                avatar: "defaultAvatar",
-                name: "User1",
-                url: "www.github.com",
-                address: "Tokyo",
-                jobPosition: "Developer",
-                followers: 200,
-                following: 10,
-                repository: 20
-            ),
-            User(
-                avatar: "defaultAvatar",
-                name: "User2",
-                url: "www.github.com",
-                address: "Tokyo",
-                jobPosition: "Business Analy",
-                followers: 32,
-                following: 23,
-                repository: 0
-            ),
-            User(
-                avatar: "defaultAvatar",
-                name: "User3",
-                url: "www.github.com",
-                address: "Tokyo",
-                jobPosition: "Tester",
-                followers: 32,
-                following: 1023,
-                repository: 2
-            ),
-        ]
+enum  APIError: Error {
+    case failedToGetData
+}
+
+final class DatabaseGetter {
+    static let shared = DatabaseGetter()
+    
+    func getUsersFromAPI(completion: @escaping (Result<[User], Error>) -> Void) {
+        
+        guard let url = URL(string: Endpoint.baseURL.rawValue) else {
+            return
+        }
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) {
+            data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+                        
+            do {
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                let results = try jsonDecoder.decode(UserResponse.self, from: data)
+                completion(.success(results.items))
+            } catch {
+                completion(.failure(APIError.failedToGetData))
+            }
+            
+        }
+        task.resume()
+    }
+    
+    func getUserDetail(userURL: String, completion: @escaping (Result<User, Error>) -> Void) {
+        
+        guard let url = URL(string: userURL) else {return}
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) {
+            data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+                        
+            do {
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                let results = try jsonDecoder.decode(User.self, from: data)
+                completion(.success(results))
+            } catch {
+                completion(.failure(APIError.failedToGetData))
+            }
+            
+        }
+        task.resume()
+    }
+    
+    func getFollowers(userURL: String, completion: @escaping (Result<[User], Error>) -> Void) {
+        
+        guard let url = URL(string: userURL) else {return}
+        
+        let task = URLSession.shared.dataTask(with: URLRequest(url: url)) {
+            data, _, error in
+            guard let data = data, error == nil else {
+                return
+            }
+                                    
+            do {
+                let jsonDecoder = JSONDecoder()
+                jsonDecoder.keyDecodingStrategy = .convertFromSnakeCase
+                let results = try jsonDecoder.decode([User].self, from: data)
+                completion(.success(results))
+            } catch {
+                completion(.failure(APIError.failedToGetData))
+            }
+            
+        }
+        task.resume()
     }
 }

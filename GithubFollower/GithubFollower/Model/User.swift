@@ -7,13 +7,21 @@
 
 import Foundation
 
-struct User {
-    var avatar: String
-    var name: String
+struct UserResponse: Codable {
+    var items: [User]
+}
+
+struct User: Codable {
+    var login: String
+    var avatarUrl: String
     var url: String
-    var address: String
-    var jobPosition: String
-    var followers: Int
-    var following: Int
-    var repository: Int
+    var htmlUrl: String
+    var name: String?
+    var followersUrl: String?
+    var followingUrl: String?
+    var location: String?
+    var bio: String?
+    var followers: Int?
+    var following: Int?
+    var publicRepos: Int?
 }

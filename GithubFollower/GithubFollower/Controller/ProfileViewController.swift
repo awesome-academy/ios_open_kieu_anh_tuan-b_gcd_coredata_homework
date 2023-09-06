@@ -112,6 +112,28 @@ final class ProfileViewController: UIViewController {
     @IBAction private func backButtonTapped(_ sender: Any) {
         navigationController?.popViewController(animated: true)
     }
+    
+    @IBAction private func heartButtonTapped(_ sender: Any) {
+        guard let userProfile = userProfile else {
+            return
+        }
+        
+        let dataManager = DataPersistenceManager.shared
+        
+        if dataManager.checkEntityExists(url: userProfile.url) {
+            self.showAlert(message: "Item already exist", controller: self)
+        } else {
+            dataManager.addToFavourite(userProfile) { result in
+                switch result {
+                case .success():
+                    self.showAlert(message: "Added to favourite", controller: self)
+                case .failure(let error):
+                    print(error.localizedDescription)
+                }
+            }
+        }
+        
+    }
 }
 
 extension ProfileViewController: UITableViewDelegate {

@@ -18,6 +18,8 @@
 		044CED962A9DD0EA00A88939 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CED952A9DD0EA00A88939 /* User.swift */; };
 		044CED9B2A9DD15500A88939 /* DatabaseGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044CED9A2A9DD15500A88939 /* DatabaseGetter.swift */; };
 		0474B9402AA7050B00B9DD2E /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474B93F2AA7050B00B9DD2E /* Endpoint.swift */; };
+		0474B9482AA7353600B9DD2E /* GithubFollowerModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0474B9462AA7353600B9DD2E /* GithubFollowerModel.xcdatamodeld */; };
+		0474B94B2AA736BF00B9DD2E /* DataPersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0474B94A2AA736BF00B9DD2E /* DataPersistenceManager.swift */; };
 		048A72B12A9F2E1B0033A482 /* Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048A72B02A9F2E1B0033A482 /* Identifier.swift */; };
 		048D8DAE2A9EDC1C00C714FD /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D8DAD2A9EDC1C00C714FD /* ProfileViewController.swift */; };
 		048D8DB42A9EF32B00C714FD /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048D8DB32A9EF32B00C714FD /* ColorExtension.swift */; };
@@ -42,6 +44,8 @@
 		044CED952A9DD0EA00A88939 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		044CED9A2A9DD15500A88939 /* DatabaseGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseGetter.swift; sourceTree = "<group>"; };
 		0474B93F2AA7050B00B9DD2E /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
+		0474B9472AA7353600B9DD2E /* GithubFollowerModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GithubFollowerModel.xcdatamodel; sourceTree = "<group>"; };
+		0474B94A2AA736BF00B9DD2E /* DataPersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPersistenceManager.swift; sourceTree = "<group>"; };
 		048A72B02A9F2E1B0033A482 /* Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Identifier.swift; sourceTree = "<group>"; };
 		048D8DAD2A9EDC1C00C714FD /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		048D8DB32A9EF32B00C714FD /* ColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorExtension.swift; sourceTree = "<group>"; };
@@ -96,6 +100,7 @@
 			isa = PBXGroup;
 			children = (
 				044CED9A2A9DD15500A88939 /* DatabaseGetter.swift */,
+				0474B94A2AA736BF00B9DD2E /* DataPersistenceManager.swift */,
 			);
 			path = Database;
 			sourceTree = "<group>";
@@ -148,6 +153,7 @@
 				04A4246B2A9DAC0E0042D05D /* Assets.xcassets */,
 				04A4246D2A9DAC0E0042D05D /* LaunchScreen.storyboard */,
 				04A424702A9DAC0E0042D05D /* Info.plist */,
+				0474B9462AA7353600B9DD2E /* GithubFollowerModel.xcdatamodeld */,
 			);
 			path = GithubFollower;
 			sourceTree = "<group>";
@@ -231,11 +237,13 @@
 				040DAF422A9E5C4D00D68DED /* FavouriteViewController.swift in Sources */,
 				04A424652A9DAC0B0042D05D /* SceneDelegate.swift in Sources */,
 				040DAF3B2A9E51A100D68DED /* ImageViewExtension.swift in Sources */,
+				0474B94B2AA736BF00B9DD2E /* DataPersistenceManager.swift in Sources */,
 				040DAF332A9DEDB800D68DED /* ButtonExtension.swift in Sources */,
 				048D8DB42A9EF32B00C714FD /* ColorExtension.swift in Sources */,
 				040DAF282A9DE61600D68DED /* TableViewExtension.swift in Sources */,
 				0474B9402AA7050B00B9DD2E /* Endpoint.swift in Sources */,
 				044CED9B2A9DD15500A88939 /* DatabaseGetter.swift in Sources */,
+				0474B9482AA7353600B9DD2E /* GithubFollowerModel.xcdatamodeld in Sources */,
 				048D8DAE2A9EDC1C00C714FD /* ProfileViewController.swift in Sources */,
 				040DAF372A9DF49100D68DED /* ReusableTableView.swift in Sources */,
 				048A72B12A9F2E1B0033A482 /* Identifier.swift in Sources */,
@@ -441,6 +449,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0474B9462AA7353600B9DD2E /* GithubFollowerModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0474B9472AA7353600B9DD2E /* GithubFollowerModel.xcdatamodel */,
+			);
+			currentVersion = 0474B9472AA7353600B9DD2E /* GithubFollowerModel.xcdatamodel */;
+			path = GithubFollowerModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 04A424572A9DAC0B0042D05D /* Project object */;
 }
